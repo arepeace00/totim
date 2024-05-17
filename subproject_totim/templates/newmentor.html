@@ -1,0 +1,28 @@
+<table border="1">
+    <tr></tr>
+    <th>MENTOR ID</th><th>MENTOR NAME</th><th>ROOM NO</th>
+    </tr>
+    {% for x in displaydata %}
+
+    <tr><td>{{x.menid}}</td>
+        <td>{{x.menname}}</td>
+        <td>{{x.menroomno}}</td>
+        <td><a href="updatedata/{{x.menid}}"> UPDATE</a></td>
+        <td><a href="viewdelete/{{x.menid}}"> DELETE</a></td>
+    </tr>
+    {% endfor %}
+    
+</table>
+
+<form action="" method="post">
+    {% csrf_token %}
+<h3>Enter Mentor Id</h3>
+<input type="text" name="mentorid"> <br> 
+<h3>Enter Mentor Name</h3>
+<input type="text" name="mentorname"> <br> 
+<h3>Enter Mentor Room No</h3>
+<input type="text" name="mentorroomno"> <br> 
+<input type="submit" value="SUBMIT">
+</form>
+
+<a href="{% url 'index' %}"> BACK TO HOMEPAGE </a>

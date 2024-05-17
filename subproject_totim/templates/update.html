@@ -1,0 +1,12 @@
+<form action="updatedata/{{updateid.menid}}" method="post">
+    {% csrf_token %}
+<h3>Enter Mentor Id</h3>
+<input type="text" name="mentorid" value="{{updateid.menid}}"> <br> 
+<h3>Enter Mentor Name</h3>
+<input type="text" name="mentorname" value="{{updateid.menname}}"> <br> 
+<h3>Enter Mentor Room No</h3>
+<input type="text" name="mentorroomno" value="{{updateid.menroomno}}"> <br> 
+<input type="submit" value="SUBMIT">
+</form>
+
+<a href="{% url 'index' %}"> BACK TO HOMEPAGE </a>

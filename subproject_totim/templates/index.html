@@ -1,0 +1,34 @@
+<html>
+    <h1>welcome totim WAD</h1>
+    {% load static %} 
+
+    
+<body>
+ {% with firstname="Muhammad Ali" %}
+
+ <h1>Hello {{ firstname }}, how are you? testing</h1>
+{% endwith %}
+
+<h1>Hello {{ lastname }}, how are you? testing from viewss</h1>
+
+<table border="1">
+    <tr></tr>
+    <th>MENTOR ID</th><th>MENTOR NAME</th><th>ROOM NO</th>
+    </tr>
+    {% for x in displaydata %}
+
+    <tr><td>{{x.menid}}</td>
+        <td>{{x.menname}}</td>
+        <td>{{x.menroomno}}</td>
+        <td><a href="updatedata/{{x.menid}}"> UPDATE</a></td>
+        <td><a href="viewdelete/{{x.menid}}"> DELETE</a></td>
+    </tr>
+    {% endfor %}
+    
+</table>
+{{message}}
+
+<a href="{% url 'newmentor' %}"> CLICK NEW MENTOR</a>
+<a href="{% url 'newstudent' %}"> CLICK NEW STUDENT</a>
+</body>
+ </html>

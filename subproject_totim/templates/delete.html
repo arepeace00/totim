@@ -1,0 +1,14 @@
+<form action="deletedata/{{datatobedeleted.menid}}" method="delete">
+    {% csrf_token %}
+<h3>Enter Mentor Id</h3>
+<input type="text" name="mentorid" value="{{datatobedeleted.menid}}"> <br> 
+<h3>Enter Mentor Name</h3>
+<input type="text" name="mentorname" value="{{datatobedeleted.menname}}"> <br> 
+<h3>Enter Mentor Room No</h3>
+<input type="text" name="mentorroomno" value="{{datatobedeleted.menroomno}}"> <br> 
+<input type="submit" value="DELETE">
+</form>
+
+<a href="{% url 'index' %}"> BACK TO HOMEPAGE </a>
+<a href="{% url 'newmentor' %}"> CLICK NEW MENTOR</a>
+<a href="{% url 'newstudent' %}"> CLICK NEW STUDENT</a>

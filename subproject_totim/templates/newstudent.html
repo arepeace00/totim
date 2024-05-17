@@ -1,0 +1,45 @@
+
+<table border="1">
+    <tr></tr>
+    <th>student ID</th><th>student NAME</th><th>student email</th><th>student age</th>
+    <th>student mentor id</th>
+    </tr>
+    {% for x in stumentor %}
+
+    <tr><td>{{x.studid}}</td>
+        <td>{{x.stuname}}</td>
+        <td>{{x.stuemail}}</td>
+        <td>{{x.stuage}}</td>
+        <td>{{x.stumentor_id}}</td>
+        <td><a href="update/{{x.studid}}"> UPDATE</a></td>
+        <td><a href="viewdelete/{{x.studid}}"> DELETE</a></td>
+    </tr>
+    {% endfor %}
+    
+</table>
+
+
+
+
+<form action="" method="post">
+    {% csrf_token %}
+<h3>Enter Student Id</h3>
+<input type="text" name="stuid"> <br> 
+<h3>Enter Student Name</h3>
+<input type="text" name="stuname"> <br> 
+<h3>Enter Student Email</h3>
+<input type="text" name="stuemail"> <br> 
+<h3>Enter Student Age</h3>
+<input type="text" name="stuage"> <br> 
+<h3>Enter Student mentor id</h3>
+<select name="selectmenid" id="selectmenid"> 
+        {% for n in mymentor %}
+            <option value="{{ n.menid}}">{{n.menid }} </option>
+       
+        {% endfor %}
+        </option> 
+</select>  
+<input type="submit" value="SUBMIT">
+</form>
+
+<a href="{% url 'index' %}"> BACK TO HOMEPAGE </a>
